@@ -24,6 +24,9 @@ export const metadata: Metadata = {
     images: ["/og.png"],
   },
   metadataBase: new URL("https://sleepycofounder.tools"),
+  verification: {
+    google: "xsZ55NnO6zaj3A8Nq4hPvwC3oQP8h4u7nAqZKkRwBbU",
+  },
 };
 
 export default function RootLayout({
