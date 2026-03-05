@@ -144,19 +144,19 @@ export default function Home() {
       <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto py-16 border-t border-gray-800">
         <h2 className="text-3xl font-bold mb-8">Browse by Category</h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-          {CATEGORIES.map((cat) => (
+          {CATEGORIES.map((catName) => (
             <button
-              key={cat.name}
-              onClick={() => setSelectedCategory(selectedCategory === cat.name ? null : cat.name)}
+              key={catName}
+              onClick={() => setSelectedCategory(selectedCategory === catName ? null : catName)}
               className={`p-4 rounded-lg border transition ${
-                selectedCategory === cat.name
+                selectedCategory === catName
                   ? "bg-purple-500/20 border-purple-500"
                   : "bg-gray-900/30 border-gray-800 hover:border-purple-500/50"
               }`}
             >
-              <div className="text-2xl mb-2">{cat.icon}</div>
-              <p className="font-semibold text-sm">{cat.name}</p>
-              <p className="text-xs text-gray-400 mt-1">{SEED_MCPS.filter(m => m.category === cat.name).length} tools</p>
+              <div className="text-2xl mb-2">📁</div>
+              <p className="font-semibold text-sm">{catName}</p>
+              <p className="text-xs text-gray-400 mt-1">{SEED_MCPS.filter(m => m.category === catName).length} tools</p>
             </button>
           ))}
         </div>
