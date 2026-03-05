@@ -19,15 +19,14 @@ const CATEGORY_COLORS: Record<string, string> = {
   Database: "#6366f1",
 };
 
-export function MCPCard({ mcp }: { mcp: MCP }) {
+export function MCPCard({ mcp, onCopyConfig }: { mcp: MCP; onCopyConfig: (config: string) => void }) {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = async (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    await navigator.clipboard.writeText(
-      JSON.stringify(mcp.mcp_config, null, 2)
-    );
+    const config = JSON.stringify(mcp.mcp_config, null, 2);
+    onCopyConfig(config);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
