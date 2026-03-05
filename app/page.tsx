@@ -7,8 +7,8 @@ import {
   Mail, BarChart2, Code, ShoppingCart, Users, Headphones, Bot,
   DollarSign, Globe, Database, Share2, Settings
 } from "lucide-react";
-import { mcps, CATEGORIES } from "@/lib/data";
-import MCPCard from "@/components/MCPCard";
+import { SEED_MCPS as mcps, CATEGORIES } from "@/lib/data";
+import { MCPCard } from "@/components/MCPCard";
 
 const STATS = [
   { label: "MCP Servers", value: "105+", icon: Zap },
